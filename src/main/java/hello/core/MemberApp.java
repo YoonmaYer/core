@@ -13,8 +13,10 @@ public class MemberApp {
 //        MemberService memberService = appConfig.memberService();
 //      MemberService memberService = new MemberServiceImpl();
 
-        // Bean 관리자
+        // 스프링 컨테이너 생성
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+
+        // bean 관리자 생성
         MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
 
         Member member = new Member(1L, "memberA", Grade.VIP);
